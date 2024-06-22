@@ -1,8 +1,7 @@
-# React + Vite
+## React приложение со списком вакансий
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- ### Проект доступен по ссылке - https://vadim-strakhov.github.io/react_rtk_job_listings/
+- ### В проекте реализована работа с состоянием и сохранение его в localStorage
+- ### Технологии - `react`, `redux-persist`, `redux-toolkit`
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![](job.png)

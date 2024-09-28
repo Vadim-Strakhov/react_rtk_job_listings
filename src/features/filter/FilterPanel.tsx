@@ -1,9 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
 
-import { Badge } from "../../UI/Badge";
+import { clearFilter, removeFilter, selectFilters } from "./filter-slice";
 import { Card } from "../../UI/Card";
 import { Stack } from "../../UI/Stack";
-import { clearFilter, removeFilter, selectFilters } from "./filter-slice";
+import { Badge } from "../../UI/Badge";
 
 const FilterPanel = () => {
   const dispatch = useDispatch();
@@ -18,7 +18,7 @@ const FilterPanel = () => {
         <Stack>
           {currentFilters.map((filter) => (
             <Badge
-              key={filter}
+              key={filter.toString()}
               variant="clearable"
               onClear={() => dispatch(removeFilter(filter))}
             >

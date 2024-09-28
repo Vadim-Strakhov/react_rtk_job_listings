@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 import { Badge } from "../../UI/Badge";
 import { Card } from "../../UI/Card";
 import { Stack } from "../../UI/Stack";
+import { IPosition } from "../../models/types";
 
 const JobPosition = ({
-  id,
   company,
   logo,
   new: isNew,
@@ -18,8 +18,8 @@ const JobPosition = ({
   languages,
   tools,
   handleAddFilter,
-}) => {
-  const badges = [].concat(role, level, ...languages, ...tools);
+}: IPosition) => {
+  const badges = [role, level, ...languages, ...tools];
 
   return (
     <Card isFeatured={featured}>
@@ -27,7 +27,7 @@ const JobPosition = ({
         <div className="job-position-info">
           <img className="job-position-avatar" src={logo} alt={company} />
           <div className="job-position-body">
-            <div className="job-postion-company">
+            <div className="job-position-company">
               <h3>{company}</h3>
               {(isNew || featured) && (
                 <Stack>
@@ -65,20 +65,3 @@ const JobPosition = ({
 };
 
 export { JobPosition };
-
-JobPosition.propTypes = {
-  id: PropTypes.number,
-  company: PropTypes.string,
-  logo: PropTypes.string,
-  new: PropTypes.bool,
-  featured: PropTypes.bool,
-  position: PropTypes.string,
-  role: PropTypes.string,
-  level: PropTypes.string,
-  postedAt: PropTypes.string,
-  contract: PropTypes.string,
-  location: PropTypes.string,
-  languages: PropTypes.arrayOf(PropTypes.string),
-  tools: PropTypes.arrayOf(PropTypes.string),
-  handleAddFilter: PropTypes.func,
-};

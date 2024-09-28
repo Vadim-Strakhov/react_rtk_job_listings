@@ -1,8 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { RootState } from "../../store";
+
+type Filter = string | number | boolean;
 
 const filterSlice = createSlice({
   name: "@@filter",
-  initialState: [],
+  initialState: [] as Filter[],
   reducers: {
     addFilter: (state, action) => {
       if (!state.includes(action.payload)) {
@@ -18,4 +21,4 @@ const filterSlice = createSlice({
 
 export const { addFilter, clearFilter, removeFilter } = filterSlice.actions;
 export const filterReducer = filterSlice.reducer;
-export const selectFilters = (state) => state.filters;
+export const selectFilters = (state: RootState) => state.filters;

@@ -9,7 +9,7 @@ const JobList = () => {
   const positions = usePositions();
   const dispatch = useDispatch();
 
-  const handleAddFilter = (filter) => {
+  const handleAddFilter = (filter: string) => {
     dispatch(addFilter(filter));
   };
 
@@ -18,8 +18,8 @@ const JobList = () => {
       {positions.map((item) => (
         <JobPosition
           key={item.id}
-          handleAddFilter={handleAddFilter}
           {...item}
+          handleAddFilter={handleAddFilter}
         />
       ))}
     </div>
